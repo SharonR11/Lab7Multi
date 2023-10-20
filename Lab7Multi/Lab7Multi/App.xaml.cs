@@ -10,8 +10,7 @@ namespace Lab7Multi
         {
             InitializeComponent();
 
-            //MainPage = new MainPage();
-            MainPage = new ExplicitDemo();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

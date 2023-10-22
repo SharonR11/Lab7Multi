@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab7Multi.Ejemplo1">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="baseStyle" TargetType="View">
+                <Setter Property="HorizontalOptions"
+                    Value="Center" />
+            </Style>
+
+            <Style x:Key="labelStyle" TargetType="Label"
+                   BasedOn="{StaticResource baseStyle}">
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="FontAttributes" Value="Italic" />
+                <Setter Property="TextColor" Value="Blue" />
+            </Style>
+            
+            <Style x:Key="buttonStyle" TargetType="Button"
+                BasedOn="{StaticResource baseStyle}">
+                <Setter Property="BorderColor" Value="Lime" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="TextColor" Value="Teal" />
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="0,10,0,0">
+            <SearchBar Placeholder="These SearchBar controls"
+                    Style="{DynamicResource searchBarStyle}" />
+            <Button Text="Buscar" Clicked="Button_Clicked" 
+                    Style="{StaticResource buttonStyle}"></Button>
+            <Label Text="Alumno 1" />
+            <Label Text="Alumno 2" />
+            <Label Text="Alumno 3" />
+            <Label Text="Alumno 4" />
+            <Label Text="Alumno 5" />
+            <Label Text="Alumno 6" Style="{StaticResource labelStyle}"/>
+            <Label Text="Alumno 7" Style="{StaticResource labelStyle}"/>
+            <Label Text="Alumno 8" Style="{StaticResource labelStyle}"/>
+
+            <Entry Text="and an implicit style override" BackgroundColor="Lime" TextColor="Red" />
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+
+</ContentPage>

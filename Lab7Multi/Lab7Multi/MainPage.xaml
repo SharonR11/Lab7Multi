@@ -3,27 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lab7Multi.MainPage">
 
-    <!--<ContentPage.Resources>
+    <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="Green"></Setter>
             </Style>
-            <Style x:Key="styleButtonDemo" TargetType="Button">
-                <Setter Property="TextColor" Value="Green"></Setter>
-            </Style>
+            
         </ResourceDictionary>
-    </ContentPage.Resources>-->
+    </ContentPage.Resources>
 
     <StackLayout>
-        <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Horizontal" >
             <StackLayout>
                 <Button x:Name="Item1" Text="ExplicitDemo"/>
                 <Button x:Name="Item2" Text="ExplicitControlDemo"/>
                 <Button x:Name="Item3" Text="ImplicitDemo"/>
                 <Button x:Name="Item4" Text="ImplicitControlDemo"/>
+                
+            </StackLayout>
+            <StackLayout>
                 <Button x:Name="Item5" Text="GlobalDemo"/>
                 <Button x:Name="Item6" Text="InheritanceDemo"/>
                 <Button x:Name="Item7" Text="DynamicDemo"/>
+                <Button x:Name="Item8" Text="Ejemplo 1"/>
             </StackLayout>
         </StackLayout>
     </StackLayout>

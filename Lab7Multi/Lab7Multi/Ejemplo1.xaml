@@ -16,34 +16,60 @@
                 <Setter Property="TextColor" Value="Blue" />
             </Style>
             
-            <Style x:Key="buttonStyle" TargetType="Button"
+            <Style x:Key="buttonStyle1" TargetType="Button"
                 BasedOn="{StaticResource baseStyle}">
-                <Setter Property="BorderColor" Value="Lime" />
+                <Setter Property="BorderColor" Value="Crimson" />
                 <Setter Property="BorderRadius" Value="5" />
                 <Setter Property="BorderWidth" Value="5" />
-                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="WidthRequest" Value="100" />
                 <Setter Property="TextColor" Value="Teal" />
             </Style>
-            
+            <Style x:Key="Entry" TargetType="Entry"
+                    BasedOn="{StaticResource baseStyle}">
+                <Setter Property="BackgroundColor" Value="Lavender"/>
+                <Setter Property="TextColor" Value="Teal" />
+            </Style>
+
         </ResourceDictionary>
     </ContentPage.Resources>
     
     <ContentPage.Content>
         <StackLayout Padding="0,10,0,0">
-            <SearchBar Placeholder="These SearchBar controls"
+            
+            <SearchBar Placeholder="Buscar Alumno"
                     Style="{DynamicResource searchBarStyle}" />
-            <Button Text="Buscar" Clicked="Button_Clicked" 
-                    Style="{StaticResource buttonStyle}"></Button>
-            <Label Text="Alumno 1" />
-            <Label Text="Alumno 2" />
-            <Label Text="Alumno 3" />
-            <Label Text="Alumno 4" />
-            <Label Text="Alumno 5" />
-            <Label Text="Alumno 6" Style="{StaticResource labelStyle}"/>
-            <Label Text="Alumno 7" Style="{StaticResource labelStyle}"/>
-            <Label Text="Alumno 8" Style="{StaticResource labelStyle}"/>
+            <StackLayout  Orientation="Horizontal" 
+                          HorizontalOptions="CenterAndExpand" >
+                <!--Se usa estilo Explicit para el primer boton-->
+                <Button Text="Buscar" Style="{StaticResource buttonStyle1}"></Button>
+                <!--Se usa estilo Global para el segundo boton-->
+                <Button Text="Buscar 2" Style="{StaticResource buttonStyle}" WidthRequest="150"></Button>
+            </StackLayout>
 
-            <Entry Text="and an implicit style override" BackgroundColor="Lime" TextColor="Red" />
+            <StackLayout Orientation="Vertical" 
+                         HorizontalOptions="Center"
+                         Spacing="20"
+                         Padding="0,20,0,20">
+                <Label Text="Alumno 1" />
+                <Label Text="Alumno 2" />
+                <Label Text="Alumno 3" />
+                <Label Text="Alumno 4" />
+                <Label Text="Alumno 5" />
+
+                <!--Se hace uso de el style labelstyle para 3 campos-->
+                <Label Text="Alumno 6" Style="{StaticResource labelStyle}"/>
+                <Label Text="Alumno 7" Style="{StaticResource labelStyle}"/>
+                <Label Text="Alumno 8" Style="{StaticResource labelStyle}"/>
+            </StackLayout>
+            
+
+            <!--Vemos que al usar estilo en el entry, ejecuta el background color y no 
+            el textcolor que se indico en style, ya que se le indica de forma directa en su campo,
+            que tome esa instrucion -->
+            <Entry Text="and an implicit style override" 
+                   Style="{StaticResource Entry}"
+                    TextColor="Red" />
+            
             
         </StackLayout>
         
